@@ -16,7 +16,7 @@ class PortfoliosController < ApplicationController
 		@portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :body))	
 		respond_to do |format|
 		  if @portfolio_item.save
-			format.html { redirect_to portfolio_create_path, notice: 'Portfolio was successfully created.' }
+			format.html { redirect_to new_portfolio_path, notice: 'Portfolio was successfully created.' }
 		  else
 			format.html { render :new }
 		  end
