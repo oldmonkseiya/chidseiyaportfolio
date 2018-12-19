@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get 'about-me', to: 'page#about'
   get 'contact', to: 'page#contact'
 
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
   root to: "page#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
